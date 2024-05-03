@@ -1,46 +1,67 @@
-permission "request" "you are running skibidi? continue?"
-permission "request" "hot singels in your area www.hotsangles.com"
-permission "request" "are you a robot? click grant to continue"
-permission "request" "are you a robot? click grant to continue "
-permission "request" "are you a robot? click grant to continue  "
-permission "request" "are you a robot? click grant to continue   "
-permission "request" "are you a robot? click grant to continue    "
-permission "request" "are you a robot? click grant to continue     "
-permission "request" "are you a robot? click grant to continue      "
-permission "request" "are you a robot? click grant to continue       "
-
 permission "request" "start run"
 permission "request" "terminal"
+permission "request" "simulate inputs"
 permission "request" "kernel"
 
+save "Microsoft Edge" "set_directory"
+
 window "show"
-window "dimensions" 800 450
-window "resizable" False
+window "dimensions" 1200 800
 
-terminal "system runtime fps_limit 5 + [0,10]random"
+auto = false
+amountus = 0
+finger = 1
+slave_power = 0
+ticktock = 0
 
-
-
-
+terminal "system runtime fps_limit 60"
 mainloop:
+c #ffffff
+
+goto 0 0
+direction timer.multiply(200).sin * 10 + 90
+image "https://raw.githubusercontent.com/RattusDong/apps/main/all/among%20us%20simulator/assets/MONG%207.png" window_height / 3 window_height / 5.5
+direction 90
+if clicked and can (
+  amountus += finger
+  can = false
+) 
+
+colour #ffffff
+loc 2 2 50 -100
+text "Points: " ++ amountus window_height / 30
+loc 2 2 50 -150
+text "PPS: " ++ slave_power window_height / 40
 
 loc -2 2 -20 -20
 square 20 20 10 : c#222
 icon "close" 0.7 : c#fff
+if clicked (
+window "dimensions" 1 1
+closen = 0
+closeg = true
+)
+
 
 loc -2 2 -60 -20
 square 20 20 10 : c#222
 icon "minimise" 0.7 : c#fff
+if clicked (
+  window "dimensions" screensize_x 100
+)
 
 loc -2 2 -100 -20
 square 20 20 10 : c#222
 icon "maximise" 0.7 : c#fff
+if clicked (
+  window "dimensions" 100 screensize_y
+)
 
 loc -2 2 -140 -20
 square 20 20 10 : c#222
 icon "minus" 0.7 : c#fff
 if clicked (
-  terminal "system runtime fps_limit 69"
+  terminal "system runtime fps_limit 60"
   window "stop"
 )
 
@@ -51,20 +72,25 @@ icon "download" 0.7 : c#fff
 loc 2 2 20 -20.13
 square 20 20 10 : c#222
 icon "controller" 0.7 : c#fff
+if clicked and auto.not (
+auto = true
+)
 
 loc 2 2 60 -20
 square 20 20 10 : c#222
 icon "favorites-full" 0.7 : c#fff
+if clicked (
+http "newtab" "https://skibidisexfortniteimpostersofficialblog.co.uk"
+amountus -= 15
+)
 
+if mouse_down.not "can = true"
 
-
-
-
-
-
-
-
-
-
-
-
+ticktock ++
+if ticktock == 60 (
+ticktock = 0
+closen ++
+)
+if closen > 8 and closeg (
+  window "stop"
+)
