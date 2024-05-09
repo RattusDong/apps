@@ -15,11 +15,14 @@ if save_data (
 save "binaries.json" "get"
 amountus = save_data."amountus"
 slave_power = save_data."slave_power"
+finger = save_data."finger"
+toilet_num = save_data."toilet_num"
 ) else (
 amountus = 0
 slave_power = 0
-)
 finger = 1
+toilet_num = 0
+)
 ticktock = 0
 secs = 0
 sent = false
@@ -42,6 +45,16 @@ loc 2 2 50 -100
 text "Points: " ++ amountus window_height / 30
 loc 2 2 50 -150
 text "PPS: " ++ slave_power window_height / 40
+
+loc -2 2 -30 -120
+square 30 30 30 : c#222
+icon "add" 0.7 : c#fff
+if clicked (
+
+)
+loc -2 2 -100 -120
+text toilet_num 20
+
 
 loc -2 2 -20 -20
 square 20 20 10 : c#222
@@ -111,6 +124,8 @@ sent = false
 out = {}
 out."amountus" = amountus
 out."slave_power" = slave_power
+out."finger" = finger
+out."toilet_num" = toilet_num
 save "binaries.json" "set" out
 )
 if closen > 7 and closeg (
