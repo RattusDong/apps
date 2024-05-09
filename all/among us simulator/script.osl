@@ -5,13 +5,22 @@ permission "request" "kernel"
 
 save "Microsoft Edge" "set_directory"
 
+
 window "show"
 window "dimensions" 1200 800
-
 auto = false
+
+save "binaries.json" "exists"
+if save_data (
+save "binaries.json" "get"
+amountus = save_data."amountus"
+slave_p
+ower = save_data."slave_power"
+) else (
 amountus = 0
-finger = 1
 slave_power = 0
+)
+finger = 1
 ticktock = 0
 
 terminal "system runtime fps_limit 60"
@@ -61,13 +70,19 @@ loc -2 2 -140 -20
 square 20 20 10 : c#222
 icon "minus" 0.7 : c#fff
 if clicked (
-  terminal "system runtime fps_limit 60"
+  terminal "system runtime fps_limit 69"
   window "stop"
 )
 
 loc -2 2 -180 -20
 square 20 20 10 : c#222
 icon "download" 0.7 : c#fff
+if clicked (
+  network "getsync" "https://raw.githubusercontent.com/RattusDong/apps/main/all/among%20us%20simulator/assets/bible.txt"
+  save "bookmarks.json" "set" data
+  slave_power += 1
+  amountus += 50
+)
 
 loc 2 2 20 -20.13
 square 20 20 10 : c#222
@@ -90,7 +105,11 @@ ticktock ++
 if ticktock == 60 (
 ticktock = 0
 closen ++
+out = {}
+out."amountus" = amountus
+out."slave_power" = slave_power
+save "binaries.json" "set" out
 )
-if closen > 8 and closeg (
+if closen > 7 and closeg (
   window "stop"
 )
