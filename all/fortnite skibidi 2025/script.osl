@@ -1,94 +1,387 @@
-save "fortniteskibidi@rattusdong" "set_directory"
-save "highscore.txt" "exists"
-if save_data (
-  save "highscore.txt" "get"
-  highscore = save_data
-) else (
-  save "highscore.txt" "set" 0
-  highscore = 0
-)
+clickx = 0
+clicky = 0
+scene = 0
+patience = 0
+shop = 0
+arlvl = 1
+bplvl = 10
+bpxp = 0
+bpxpreq = 100
 
-window "show"
-window "dimensions" 800 450
-window "resizable" False
+ownbp = true
 
-shotTimer = 0
+bullets = []
+enemies = []
 
-skibX = 600
-skibY = [-200,200].random
-speed = 1
-score = 0
-dead = false
-dieOff = 0
-click = flase
+window.width = 1250
+window.height = 750
+
+roturicon = "w 0.75 ellipse 0 0 7 0.45 100 ellipse 0 0 7 0.45 160 ellipse 0 0 7 0.45 220"
+roturiconb = "w 1.5 ellipse 0 0 7 0.45 100 ellipse 0 0 7 0.45 160 ellipse 0 0 7 0.45 220"
 
 mainloop:
+
 goto 0 0
-image "https://raw.githubusercontent.com/RattusDong/apps/main/all/fortnite%20skibidi%202024/assets/background.png"
-goto -300 -100 + dieOff
-image "https://raw.githubusercontent.com/RattusDong/apps/main/all/fortnite%20skibidi%202024/assets/jonsey.png"
+square window.width window.height : c#window_colour
+mouse_ondown = onclick
 
-goto skibX skibY
-image "https://raw.githubusercontent.com/RattusDong/apps/main/all/fortnite%20skibidi%202024/assets/skibidi.png" 80 120
-if mouse_touching (
-  cursor "crosshair"
+if patience > 0 (
+  patience -= 1
 )
-if clicked and dead.not (
-  skibX += 500 + [0,150].random
-  speed += 0.1
-  score ++
-  if score > highscore (
-    save "highscore.txt" "set" score
-    highscore = score
+
+if ownbp (
+  bpimage = "https://raw.githubusercontent.com/RattusDong/apps/refs/heads/main/all/fortnite%20skibidi%202025/assets/battlepass.png"
+) else (
+  bpimage = "https://raw.githubusercontent.com/RattusDong/apps/refs/heads/main/all/fortnite%20skibidi%202025/assets/freepass.png"
+)
+
+
+
+//title screen
+if scene == 0 (
+goto 0 0
+image "https://raw.githubusercontent.com/RattusDong/apps/refs/heads/main/all/fortnite%20skibidi%202025/assets/funnyforniteloadingscreen.png" window.width window.height
+import "win-buttons"
+
+txtx = -511
+loop 3 (
+  txty = 1
+  loop 3 (
+    loc 999 4 txtx txty
+    text "FORTNITE SKIBIDI 2025 DEFINITIIVE" 32 : c#004
+    txty += 5
   )
-  skibY = [-200,200].random
+  txtx += 5
 )
-if skibX < -200 (
-  dead = true
-  click = true
+txtx = -508
+loop 3 (
+  txty = -2
+  loop 3 (
+    loc 999 4 txtx txty
+    text "FORTNITE SKIBIDI 2025 DEFINITIIVE" 32 : c#004
+    txty += 5
+  )
+  txtx += 5
+)
+txtx = -505
+loop 3 (
+  txty = -5
+  loop 3 (
+    loc 999 4 txtx txty
+    text "FORTNITE SKIBIDI 2025 DEFINITIIVE" 32 : c#004
+    txty += 5
+  )
+  txtx += 5
 )
 
-if clicked.not (
-  click = false
+loc 999 4 -506 6
+text "FORTNITE SKIBIDI 2025 DEFINITIIVE" 32 : c#017
+loc 999 4 -503 3
+text "FORTNITE SKIBIDI 2025 DEFINITIIVE" 32 : c#12a
+loc 999 4 -500 0
+text "FORTNITE SKIBIDI 2025 DEFINITIIVE" 32 : c#36e
+loc 999 -4 0 0
+square 300 100 20 : c#017
+if onclick (
+  clock = 1
+  cooldown = 45
+  cooldownmax = 45
+  spawnrate = 300
+  vbucks = 0
+  round = 1
+  scene = 1
+)
+if mouse_touching (
+  cursor "pointer"
+)
+square 300 100 : c#12a
+loc 999 -4 -125 -5
+text "START" 50 : c#004
 )
 
-goto -180 200
-text "Skibidi Kills: " ++ score 20
-goto -150 170
-text "Highest: " ++ highscore 16
-goto -200 0 + dieOff
+
+//game scene
+if scene == 1 (
+goto 0 0
+image "https://raw.githubusercontent.com/RattusDong/apps/refs/heads/main/all/fortnite%20skibidi%202025/assets/mcgrassbg.png" window.width
+
+image "https://raw.githubusercontent.com/RattusDong/apps/refs/heads/main/all/fortnite%20skibidi%202025/assets/jonsey2.png" 88
 
 pointat mouse_x mouse_y
-direction direction.clamp(45,135)
-turnright 45
-image "https://raw.githubusercontent.com/RattusDong/apps/main/all/fortnite%20skibidi%202024/assets/shotgun.png"
-direction 90
-if dead (
-  goto 0 -150
-  image "https://raw.githubusercontent.com/RattusDong/apps/main/all/fortnite%20skibidi%202024/assets/fire.png" 800 500
+image "https://raw.githubusercontent.com/RattusDong/apps/refs/heads/main/all/fortnite%20skibidi%202025/assets/ar" ++ arlvl ++ ".png" 100
 
-  goto -200 0
-  text "Press Space to restart" 15
+loc 2 -2 165 35
+square 310 50 : c#000
 
-  dieOff = 2000
+if "s".pressed and patience == 0 (
+  patience = 12
+  scene = 2
+)
 
-  if "space".pressed (
-    dead = false
-    dieOff = 0
-    score = 0
-    skibX = 600
-    skibY = [-200,200].random
-    speed = 1
+if mouse_down and cooldown < 0 (
+  clickx = mouse_x
+  clicky = mouse_y
+  cooldown = cooldownmax
+  goto 0 0
+  pointat clickx clicky
+  bullets.append({
+    "x": 0,
+    "y": 0,
+    "d": direction,
+    "s": 10,
+    "dam": 1
+  })
+)
+
+delete_bullets = []
+each i item bullets (
+  goto item.x item.y
+  square 8 8 : c#0f0
+  
+  each i2 item2 enemies (
+  if dist(item2.x, item2.y, item.x, item.y) < 48 (
+    item2.hp -= item.dam
+    item2.barshow = 90
+    delete_bullets.append(i)
+    )
+    enemies[i2] = item2
   )
+
+  item.x += item.d.sin() * 10
+  item.y += item.d.cos() * 10
+  
+  if dist(item.x, item.y, 0, 0) > window.width + window.height (
+    delete_bullets.append(i)
+  )
+  bullets[i] = item
 )
 
-skibX -= speed
-
-loc -2 2 -20 -20
-square 20 20 10 : c#222
-icon "w 4 line 10 10 -10 -10 line -10 10 10 -10" 0.7 : c#fff
-if clicked (
-  window "stop"
+if clock % spawnrate == 0 (
+  bpxp += 1
+  goto random(-100,100) random(-100,100)
+  pointat 0 0
+  enemies.append({
+    "d": direction,
+    "x": direction.sin * -600,
+    "y": direction.cos * -600,
+    "s": 1,
+    "hp": 3,
+    "hpmax": 3,
+    "dam": 1,
+    "rw": 10,
+    "baroff": 70,
+    "barshow": 0,
+    "img": "skibidi.png"
+  })
 )
 
-//special thanks to rattus
+delete_enemies = []
+each i item enemies (
+  goto item.x item.y
+  direction 90
+  image "https://raw.githubusercontent.com/RattusDong/apps/refs/heads/main/all/fortnite%20skibidi%202025/assets/skibidi.png" 64
+  if mouse_touching (
+    cursor "crosshair"
+    if item.barshow < 15 (
+      item.barshow = 15
+  )
+  )
+  if item.barshow > 0 (
+    goto item.x item.y - item.baroff
+    square 105 25 : c#000
+    goto item.x - (item.hp / item.hpmax * -50) - 50 item.y - item.baroff
+    square (item.hp / item.hpmax * -100) 20 : c#0f3
+    item.barshow -= 1
+  )
+
+  item.x += item.d.sin() * item.s
+  item.y += item.d.cos() * item.s
+  
+  if item.hp <= 0 (
+    vbucks += item.rw
+    delete_enemies.append(i)
+  )
+  enemies[i] = item
+)
+
+direction 90
+loc 2 2 135 -50
+square 250 75 15 : c#017
+if mouse_touching (
+cursor "pointer"
+)
+if onclick and patience == 0 (
+  patience = 12
+  scene = 2
+)
+
+square 250 75 : c#12a
+loc 2 2 10 -52
+text "[S]SHOP" 35 : c#004
+
+loc 2 2 40 -140
+image "https://raw.githubusercontent.com/RattusDong/apps/refs/heads/main/all/fortnite%20skibidi%202025/assets/vbuck.png" 64
+loc 2 2 90 -140
+text vbucks 25 : c#004
+
+loc 2 2 40 -210
+image bpimage 64
+loc 2 2 90 -210
+text bplvl 25 : c#004 40 -140
+
+loc 999 2 -150 -40
+text "Round:" + round 40 : c#004
+
+each i delete_bullets (
+  bullets.delete(i)
+)
+each i delete_enemies (
+  enemies.delete(i)
+)
+clock += 1
+cooldown -= 1
+)
+
+
+//shop
+if scene == 2 (
+
+if "s".pressed and patience == 0 (
+  patience = 12
+  scene = 1
+)
+
+direction 90
+goto 0 0
+square window.width window.height : c#36e
+
+if shop == 1 (
+  loc 2 2 320 -50
+  icon roturiconb 5 : c#111
+  icon roturicon 5 : c#fff 
+)
+
+if shop == 2 (
+  loc 999 2 150 -150
+  image bpimage 256
+  
+  if bplvl >= 10 (
+    if bplvl >= 100 (
+      lvloff = 90
+    ) else (
+      lvloff = 110
+    )
+  ) else (
+    lvloff = 130
+  )
+  
+  colour #112
+  if ownbp (
+    colour #831
+  )
+  //lmao
+  loc 999 2 lvloff + 5 -305
+  text bplvl 40
+  loc 999 2 lvloff + 5 -295
+  text bplvl 40
+  loc 999 2 lvloff - 5 -305
+  text bplvl 40
+  loc 999 2 lvloff - 5 -295
+  text bplvl 40
+  loc 999 2 lvloff + 5 -300
+  text bplvl 40
+  loc 999 2 lvloff - 5 -300
+  text bplvl 40
+  loc 999 2 lvloff -305
+  text bplvl 40
+  loc 999 2 lvloff -295
+  text bplvl 40
+  
+  loc 999 2 lvloff -300
+  colour #889
+  if ownbp (
+    colour #d94
+  )
+  text bplvl 40 
+  
+  if bp
+  loc -2 2 -10 -10  
+)
+
+
+loc 2 2 0 0
+square 550 window.height * 2 : c#12a
+
+loc 2 2 135 -50
+square 250 75 15 : c#017
+if mouse_touching (
+cursor "pointer"
+)
+if onclick and patience == 0 (
+  patience = 12
+  scene = 1
+)
+square 250 75 : c#12a
+loc 2 2 10 -52
+text "[S]SHOP" 35 : c#004
+
+loc 2 2 40 -140
+image "https://raw.githubusercontent.com/RattusDong/apps/refs/heads/main/all/fortnite%20skibidi%202025/assets/vbuck.png" 64
+loc 2 2 90 -140
+text vbucks 25 : c#004
+
+loc 2 2 40 -210
+image bpimage 64
+loc 2 2 90 -210
+text bplvl 25 : c#004
+
+
+loc 2 -2 0 45
+square 525 + t2off 40 50 : c#017
+if shop == 2 (
+  t2off = 25
+  colour #36e
+) else (
+  t2off = 0
+  colour #12a
+)
+square 525 + t2off 40 35
+if onclick (
+  shop = 2
+)
+text "Battle Pass" 24 : c#004
+
+loc 2 -2 0 135
+square 525 + t1off 40 50 : c#017
+if shop == 1 (
+  t1off = 25
+  colour #36e
+) else (
+  t1off = 0
+  colour #12a
+)
+square 525 + t1off 40 35
+if onclick (
+  shop = 1
+)
+text "Credits" 24 : c#004
+
+
+
+loc 2 -2 0 225
+square 525 + t0off 40 50 : c#017
+if shop == 0 (
+  t0off = 25
+  colour #36e
+) else (
+  t0off = 0
+  colour #12a
+)
+square 525 + t0off 40 35
+if onclick (
+  shop = 0
+)
+text "V-Bucks" 24 : c#004
+
+)
+import "win-buttons"
