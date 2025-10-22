@@ -21,14 +21,14 @@
     "script": {
       "scriptSize": 3145,
       "scriptLines": 194,
-      "lastModified": 1755900062655
+      "lastModified": 1760630168244
     }
   },
   "arrow": {
     "title": "Arrow",
     "description": "Arrow is a wave based survival game where you must defeat enemies and level up your character.",
     "author": "Mist",
-    "version": "1.2",
+    "version": "1.4",
     "genre": "Action, Arcade, Shooter",
     "game_modes": [
       "Single-PLayer"
@@ -36,49 +36,26 @@
     "supports": [
       "originOS"
     ],
+    "screenshots": [
+      "main.png"
+    ],
     "icon": "image https://raw.githubusercontent.com/RoturTW/apps/refs/heads/main/all/arrow/assets/icon.png 20\n",
     "size": {
-      "bytes": 50788,
-      "kilobytes": "49.60",
-      "megabytes": "0.05"
+      "bytes": 155630,
+      "kilobytes": "151.98",
+      "megabytes": "0.15"
     },
     "script": {
-      "scriptSize": 17762,
-      "scriptLines": 770,
-      "lastModified": 1755900062656
-    }
-  },
-  "ceslum": {
-    "title": "Ceslum",
-    "description": "Ceslum is a real internet browser for Rotur! It can be used to browse sites like the OSL / CRL Docs, Handy while coding!",
-    "author": "Constellinux",
-    "version": "1.0",
-    "genre": "Browser, Internet, Developer",
-    "game_modes": [
-      "Single-PLayer"
-    ],
-    "permissions": [],
-    "supports": [
-      "originOS"
-    ],
-    "screenshots": [],
-    "icon": "c #fff\nw 10\nsquare 0 0 5 5\nc #111\nw 8\nsquare 0 0 5 5\ndot 0 0\nw 10\nc #eba134\ndot 0 0\nw 2.25\nc #383838\nsquare 0 0 5 5\nc #fff\nline 7.5 0 0 7.5\ncont -7.5 0\ncont 0 -7.5\ncont 7.5 0",
-    "size": {
-      "bytes": 1852,
-      "kilobytes": "1.81",
-      "megabytes": "0.00"
-    },
-    "script": {
-      "scriptSize": 1210,
-      "scriptLines": 46,
-      "lastModified": 1755900062657
+      "scriptSize": 18551,
+      "scriptLines": 804,
+      "lastModified": 1760630168246
     }
   },
   "claw": {
     "title": "Claw",
     "description": "Claw is a rotur-based and easy to use social platform! Post small messages on your account! No algorithms here, just browse the latest posts by people on rotur.",
     "author": "Mist",
-    "version": "2.9",
+    "version": "3.1",
     "genre": "Social, Communication, Networking",
     "game_modes": [
       "Single-Player"
@@ -91,47 +68,46 @@
       "ConstellinuxProject"
     ],
     "screenshots": [
-      "Screenshot 2024-11-12 at 10.44.57.png"
+      "main.png"
     ],
     "changelogs": [
       "Log v1.md"
     ],
     "icon": "w 10 c #353b64 square 0 0 5 5 w 8 c #111 square 0 0 5 5 dot 0 0 c #fff w 1.5 cutcircle 3 -6.4 9 -3.5 45 w 3 cutcircle 3 -6.4 9 -2 35 w 4 cutcircle 3 -6.4 9 0 15",
     "size": {
-      "bytes": 209337,
-      "kilobytes": "204.43",
-      "megabytes": "0.20"
+      "bytes": 353282,
+      "kilobytes": "345.00",
+      "megabytes": "0.34"
     },
     "script": {
-      "scriptSize": 14725,
+      "scriptSize": 14732,
       "scriptLines": 618,
-      "lastModified": 1755900062658
+      "lastModified": 1760630168249
     }
   },
-  "crl": {
-    "title": "CRL",
-    "description": "A Sandboxing Program for Constellinux CRL Code. Uses the embed system; ROTUR is disabled within, and files are not accessible by either.",
-    "author": "ThatBeaverDev",
+  "clicker game": {
+    "title": "Clicker Game",
+    "description": "A simple clicker game",
+    "author": "Allucat1000",
     "version": "1.0",
-    "genre": "Developer, Programming, Utility",
+    "genre": "Arcade, Casual",
     "game_modes": [
-      "Single-PLayer"
+      "Single-Player"
     ],
     "permissions": [],
     "supports": [
       "originOS"
     ],
-    "screenshots": [],
-    "icon": "c #d98b0d w 6 square 0 -2 5 6 square -2 3 3 5 dot 0 -3 w 3 c #966412 line 2 9.5 6.5 5 cont 2 5 cont 2 9.5  c #fff w 1.5 cutcircle 2 -2 3 0 180 cutcircle -2 -5 3 0 180",
+    "icon": "w 10 c #858585 dot 0 0 w 1 c #fff line -1.5 -1.5 -1.5 3 cont 1.5 -1 cont -1.5 -1.5 line 0 -1.5 0.5 -3 line 0 -1.5 0 1 line -0.5 -1 -0.75 1\n",
     "size": {
-      "bytes": 1449,
-      "kilobytes": "1.42",
+      "bytes": 3560,
+      "kilobytes": "3.48",
       "megabytes": "0.00"
     },
     "script": {
-      "scriptSize": 907,
-      "scriptLines": 30,
-      "lastModified": 1755900062658
+      "scriptSize": 3125,
+      "scriptLines": 125,
+      "lastModified": 1760630168249
     }
   },
   "dock themer": {
@@ -158,7 +134,7 @@
     "script": {
       "scriptSize": 916,
       "scriptLines": 43,
-      "lastModified": 1755900062659
+      "lastModified": 1760630168249
     }
   },
   "flappy bird": {
@@ -183,14 +159,14 @@
     "script": {
       "scriptSize": 2960,
       "scriptLines": 146,
-      "lastModified": 1755900062660
+      "lastModified": 1760630168250
     }
   },
   "fluficord": {
     "title": "Fluficord",
     "description": "A funny silly communication app (inspired by discord as you could probably tell) :P",
     "author": "Flufi",
-    "version": "0.7a",
+    "version": "0.9a",
     "genre": "Social, Communication, Messaging",
     "game_modes": [
       "Single-player"
@@ -206,14 +182,14 @@
     ],
     "icon": "w 10 c #9800f0 square 0 0 5 5 c #111 w 8 square 0 0 5 5 dot 0 0  w 2.7 c #fff line -6.3 -2.7 -3.6 3.6 line -6.3 -2.7 -4.73 -4.05 line -4.73 -4.05 -2.7 -4.5 line -2.7 -4.5 0 -1.8 line 6.3 -2.7 3.6 3.6 line 6.3 -2.7 4.73 -4.05 line 4.73 -4.05 2.7 -4.5 line 2.7 -4.5 0 -1.8  cutcircle -2.07 1.71 2.48 1 45 cutcircle 2.07 1.71 2.48 -1 45  w 4.5 line -3.6 -0.9 -1.8 0.9 line 3.6 -0.9 1.8 0.9  w 1.8 c #111 dot -2.47 2.25 dot 2.48 2.25  cutcircle -1.89 0 -2.02 -.2 70 cutcircle 1.89 0 -2.02 .2 70\n",
     "size": {
-      "bytes": 3455554,
-      "kilobytes": "3374.56",
-      "megabytes": "3.30"
+      "bytes": 3065878,
+      "kilobytes": "2994.02",
+      "megabytes": "2.92"
     },
     "script": {
-      "scriptSize": 33067,
-      "scriptLines": 1104,
-      "lastModified": 1755900062677
+      "scriptSize": 34544,
+      "scriptLines": 1160,
+      "lastModified": 1760630168263
     }
   },
   "focuser": {
@@ -235,14 +211,14 @@
     "script": {
       "scriptSize": 393,
       "scriptLines": 20,
-      "lastModified": 1755900062677
+      "lastModified": 1760630168263
     }
   },
   "fortnite skibidi 2024": {
     "title": "Fortnite Skibidi 2024",
     "description": "fortnite defend from villanous skibidi in fast pace action simulator now with vbucks reward hi score download free 2023",
-    "author": "RattusDong",
-    "version": "1.4",
+    "author": "RattusDong, Mist",
+    "version": "1.5",
     "genre": "romance, visual novel",
     "game_modes": [
       "Online Multiplayer"
@@ -256,14 +232,14 @@
     ],
     "icon": "image https://raw.githubusercontent.com/RattusDong/apps/main/all/fortnite%20skibidi%202024/assets/unnamed.png 20\n",
     "size": {
-      "bytes": 3530988,
-      "kilobytes": "3448.23",
+      "bytes": 3530840,
+      "kilobytes": "3448.09",
       "megabytes": "3.37"
     },
     "script": {
-      "scriptSize": 4773,
-      "scriptLines": 214,
-      "lastModified": 1755900062685
+      "scriptSize": 4619,
+      "scriptLines": 223,
+      "lastModified": 1760630168270
     }
   },
   "goose": {
@@ -288,7 +264,7 @@
     "script": {
       "scriptSize": 2332,
       "scriptLines": 95,
-      "lastModified": 1755900062779
+      "lastModified": 1760630168273
     }
   },
   "jump and run": {
@@ -313,7 +289,7 @@
     "script": {
       "scriptSize": 3956,
       "scriptLines": 194,
-      "lastModified": 1755900062780
+      "lastModified": 1760630168273
     }
   },
   "lights out": {
@@ -338,7 +314,7 @@
     "script": {
       "scriptSize": 1110,
       "scriptLines": 71,
-      "lastModified": 1755900062780
+      "lastModified": 1760630168273
     }
   },
   "mallet": {
@@ -362,14 +338,14 @@
     "script": {
       "scriptSize": 29643,
       "scriptLines": 1128,
-      "lastModified": 1755900062780
+      "lastModified": 1760630168274
     }
   },
   "nekonline": {
     "title": "Nekonline",
     "description": "A virtual pet widget that sits above the OriginOS dock, displaying all online users as cute lil kitty cats.\nControls:\n- Each cat cooresponds to a user actively on OriginOS. You and your Rotur friends are highlighted.\n- Cats can be dragged around by clicking and holding them.",
-    "author": "Nameless",
-    "version": "0.9",
+    "author": "Nameless, Mist",
+    "version": "1.2",
     "genre": "Desktop Pet, Utility, Multiplayer",
     "game_modes": [
       "Multiplayer"
@@ -380,14 +356,14 @@
     ],
     "icon": "w 20 c #a88 dot 0 0 w 18 c #daa dot 0 0 image https://raw.githubusercontent.com/NexusKitten/images/main/nekonline/mrmowmow.png 16\n",
     "size": {
-      "bytes": 5354,
-      "kilobytes": "5.23",
+      "bytes": 5707,
+      "kilobytes": "5.57",
       "megabytes": "0.01"
     },
     "script": {
-      "scriptSize": 4725,
-      "scriptLines": 195,
-      "lastModified": 1755900062781
+      "scriptSize": 5072,
+      "scriptLines": 211,
+      "lastModified": 1760630168274
     }
   },
   "oft": {
@@ -414,14 +390,44 @@
     "script": {
       "scriptSize": 877,
       "scriptLines": 43,
-      "lastModified": 1755900062789
+      "lastModified": 1760630168280
+    }
+  },
+  "originchats": {
+    "title": "originChats",
+    "description": "A simple, self hostable discord alternative for originOS.",
+    "author": "Mist",
+    "version": "1",
+    "genre": "Social, Communication, Messaging",
+    "game_modes": [
+      "Single-player"
+    ],
+    "permissions": [
+      "notifications"
+    ],
+    "supports": [
+      "originOS"
+    ],
+    "requires": {
+      "originOS": "600"
+    },
+    "icon": "c #AF78F7 w 10 square 0 0 5 5 c #0a0303 w 8 square 0 0 5 5 dot 0 0 c #AF78F7 w 4 square 0 1 4 2 line -4 0 -4 -3 cont 0 0 w 5 line -2 1 2 1",
+    "size": {
+      "bytes": 14701,
+      "kilobytes": "14.36",
+      "megabytes": "0.01"
+    },
+    "script": {
+      "scriptSize": 14238,
+      "scriptLines": 573,
+      "lastModified": 1760630168281
     }
   },
   "origincord": {
     "title": "OriginCord",
     "description": "An osl based discord client",
     "author": "Mist",
-    "version": "6.0",
+    "version": "6.2",
     "genre": "Social, Communication, Messaging",
     "game_modes": [
       "Single-player"
@@ -437,14 +443,14 @@
     },
     "icon": "c #5865f2 w 20 dot 0 0 c #fff w 3 line 3 2 5 -2 cont 3 -3 cont 2 -2 cont -2 -2 cont -3 -3 cont -5 -2 cont -3 2.5 cont -2 2.5 cont -1 1.7 cont 1 1.7 cont 2 2.5 cont 3 2.5 cont 5 -2 w 4.5 line -2 0 2 0 c #5865f2 w 2.5 dot 2 -1 dot -2 -1\n",
     "size": {
-      "bytes": 56763,
-      "kilobytes": "55.43",
+      "bytes": 56916,
+      "kilobytes": "55.58",
       "megabytes": "0.05"
     },
     "script": {
-      "scriptSize": 39649,
-      "scriptLines": 1540,
-      "lastModified": 1755900062789
+      "scriptSize": 39802,
+      "scriptLines": 1543,
+      "lastModified": 1760630168281
     }
   },
   "originfy": {
@@ -468,14 +474,14 @@
     "script": {
       "scriptSize": 7238,
       "scriptLines": 301,
-      "lastModified": 1755900062792
+      "lastModified": 1760630168283
     }
   },
   "originkill": {
     "title": "OriginKill",
     "description": "(almost perfect) recreation of windowkill but on origin",
     "author": "Flufi",
-    "version": "1.2c",
+    "version": "1.2d",
     "genre": "Action, Arcade, Shooter",
     "game_modes": [
       "singleplayer"
@@ -491,14 +497,14 @@
     ],
     "icon": "w 10 c #fff square 0 0 5 5 c #111 w 8 square 0 0 5 5 dot 0 0 c #fff w 1.75 cutcircle 0 0 5 0 180\n",
     "size": {
-      "bytes": 4099762,
-      "kilobytes": "4003.67",
+      "bytes": 4099749,
+      "kilobytes": "4003.66",
       "megabytes": "3.91"
     },
     "script": {
-      "scriptSize": 40752,
+      "scriptSize": 40739,
       "scriptLines": 1431,
-      "lastModified": 1755900062808
+      "lastModified": 1760630168299
     }
   },
   "ping pong": {
@@ -523,11 +529,11 @@
     "script": {
       "scriptSize": 1735,
       "scriptLines": 100,
-      "lastModified": 1755900062808
+      "lastModified": 1760630168299
     }
   },
-  "ratsimulater2013": {
-    "title": "Rat Simulater: 2013",
+  "rat simulater 2013": {
+    "title": "Rat Simulater 2013",
     "description": "Live the life of a great rat soldier and face your foes head on in this realistic simulator experience. Featuring stunning handcrafted pixel artstyle and a hollywood soundtrack, this experience will leave you in awe. Use the mouse to attack enemies and navigate the vast world with this simplified yet engaging control style.",
     "author": "RattusDong",
     "version": "1.0",
@@ -539,16 +545,50 @@
     "supports": [
       "originOS"
     ],
-    "icon": "image https://raw.githubusercontent.com/Mistium/apps/main/all/ratsimulater2013/assets/player.png 25",
+    "icon": "image https://raw.githubusercontent.com/roturTW/apps/main/all/rat%20simulater%202013/assets/player.png 25",
     "size": {
-      "bytes": 831460,
-      "kilobytes": "811.97",
+      "bytes": 827990,
+      "kilobytes": "808.58",
       "megabytes": "0.79"
     },
     "script": {
-      "scriptSize": 4504,
-      "scriptLines": 161,
-      "lastModified": 1755900062812
+      "scriptSize": 6760,
+      "scriptLines": 249,
+      "lastModified": 1760630168303
+    }
+  },
+  "salium": {
+    "title": "Salium",
+    "description": "A simple, convienent gallery of custom system themes and wallpapers that applies customization directly from the app.",
+    "author": "iris",
+    "version": "1.00001",
+    "genre": "Utility, Customization, System",
+    "game_modes": [
+      "Single-player",
+      "Multiplayer"
+    ],
+    "permissions": [
+      "Account"
+    ],
+    "supports": [
+      "OriginOS"
+    ],
+    "screenshots": [
+      "salium-ss-1.png",
+      "salium-ss-2.png",
+      "salium-ss-3.png",
+      "salium-ss-4.png"
+    ],
+    "icon": "c #f99\nw 20\ndot 0 0\nc #211\nw 18\ndot 0 0\nc #f99\nw 1\nsquare 0 3 4 3\nsquare 0 -1.5 4 .8\nline 4 -1.5 -4 -1.5\nline -2 6 -2 3\nline -0.5 6 -0.5 4\nw 3\nline 0 -2 0 -6\nc #211\nw 1\ndot 0 -6\n",
+    "size": {
+      "bytes": 5452598,
+      "kilobytes": "5324.80",
+      "megabytes": "5.20"
+    },
+    "script": {
+      "scriptSize": 4672,
+      "scriptLines": 198,
+      "lastModified": 1760630168321
     }
   },
   "slider": {
@@ -573,7 +613,7 @@
     "script": {
       "scriptSize": 2201,
       "scriptLines": 86,
-      "lastModified": 1755900062813
+      "lastModified": 1760630168321
     }
   },
   "snake": {
@@ -598,14 +638,14 @@
     "script": {
       "scriptSize": 2245,
       "scriptLines": 123,
-      "lastModified": 1755900062813
+      "lastModified": 1760630168321
     }
   },
   "super slime bros": {
     "title": "super slime bros",
     "description": "Super Slime Bros is a remake of the core systems inside the game \"super smash bros\" written entirely in osl (origin scripting language)\n\nSSB is a video game tailored towards more competitive players who want to fight their friends in a complex games environment with many different play styles, there is no specific story that actually affects the gameplay, instead, the most popular version of the game is where you fight against other players using one of many different characters.\n\nIn SSB you can select characters and each character has a set of unique moves that it can use in order to deal damage to other players. Damage in this game doesn't work in the traditional sense, instead of dying when you hit a certain threshold, you get knocked further, the more damage you've taken, when you are hit by attacks from players.",
     "author": "Mist",
-    "version": "2.8",
+    "version": "2.9",
     "genre": "Fighting, Action, Multiplayer",
     "game_modes": [
       "local-multi-player"
@@ -621,14 +661,14 @@
     ],
     "icon": "image https://raw.githubusercontent.com/Mistium/Super-Slime-Bros/main/assets/icon.png 20\n",
     "size": {
-      "bytes": 898784,
-      "kilobytes": "877.72",
+      "bytes": 898793,
+      "kilobytes": "877.73",
       "megabytes": "0.86"
     },
     "script": {
-      "scriptSize": 22766,
-      "scriptLines": 895,
-      "lastModified": 1755900062817
+      "scriptSize": 22775,
+      "scriptLines": 930,
+      "lastModified": 1760630168326
     }
   },
   "timer": {
@@ -650,7 +690,7 @@
     "script": {
       "scriptSize": 463,
       "scriptLines": 28,
-      "lastModified": 1755900062817
+      "lastModified": 1760630168326
     }
   },
   "todo": {
@@ -677,7 +717,36 @@
     "script": {
       "scriptSize": 1166,
       "scriptLines": 54,
-      "lastModified": 1755900062817
+      "lastModified": 1760630168326
+    }
+  },
+  "ultimate monster collector": {
+    "title": "Ultimate Monster Collector",
+    "description": "A small game where you collect different flavours of monster by random chance.",
+    "author": "Mist",
+    "version": "1.3",
+    "genre": "Casual",
+    "game_modes": [
+      "Single-player"
+    ],
+    "permissions": [],
+    "supports": [
+      "originOS"
+    ],
+    "requires": {
+      "originOS": "601"
+    },
+    "screenshots": [],
+    "icon": "image https://raw.githubusercontent.com/RoturTW/apps/refs/heads/main/all/ultimate%20monster%20collector/assets/icon.png 20",
+    "size": {
+      "bytes": 4058458,
+      "kilobytes": "3963.34",
+      "megabytes": "3.87"
+    },
+    "script": {
+      "scriptSize": 6825,
+      "scriptLines": 293,
+      "lastModified": 1760630168335
     }
   },
   "wosle": {
@@ -707,7 +776,7 @@
     "script": {
       "scriptSize": 24916,
       "scriptLines": 254,
-      "lastModified": 1755900062824
+      "lastModified": 1760630168339
     }
   },
   "youtube": {
@@ -732,7 +801,7 @@
     "script": {
       "scriptSize": 3423,
       "scriptLines": 123,
-      "lastModified": 1755900062824
+      "lastModified": 1760630168339
     }
   }
 }
