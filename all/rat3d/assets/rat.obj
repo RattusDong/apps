@@ -1,6 +1,6 @@
 # Blender 4.3.2
 # www.blender.org
-mtllib untitled.mtl
+mtllib rat.mtl
 o ratlow
 v 0.130677 1.409979 0.642726
 v 0.136807 0.872399 1.950262
